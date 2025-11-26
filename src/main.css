@@ -1,0 +1,21 @@
+/* TDM MANTHAN/src/main.css */
+
+/* Sets a default font and removes default margin/padding */
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0; /* Light gray background to show it's working */
+}
+
+/* Example style for a main container */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
