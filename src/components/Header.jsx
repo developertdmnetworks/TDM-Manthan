@@ -1,4 +1,4 @@
-import { Mic2, Menu, Search } from 'lucide-react';
+import { Mic2, Menu } from 'lucide-react';
 
 export function Header() {
   return (
@@ -16,38 +16,25 @@ export function Header() {
             </h1>
           </div>
 
-          <nav className="hidden md:flex items-center gap-8 ml-12">
-            <a
-              href="#home"
-              className="text-white hover:text-orange-400 transition-colors font-medium"
-            >
-              Home
-            </a>
-            <a
-              href="#recent"
-              className="text-gray-300 hover:text-orange-400 transition-colors font-medium"
-            >
-              Recent
-            </a>
-            <a
-              href="#trending"
-              className="text-gray-300 hover:text-orange-400 transition-colors font-medium"
-            >
-              Trending
-            </a>
-            <a
-              href="#categories"
-              className="text-gray-300 hover:text-orange-400 transition-colors font-medium"
-            >
-              Categories
-            </a>
-          </nav>
         </div>
 
-        <div className="flex items-center gap-4">
-          <button className="text-white hover:text-orange-400 transition-colors">
-            <Search size={24} />
-          </button>
+        <div className="flex items-center gap-6">
+          <a
+            href="https://open.spotify.com/show/YOUR_SHOW_ID"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-green-500 transition-colors font-medium text-sm md:text-base"
+          >
+            Listen on Spotify
+          </a>
+          <a
+            href="https://podcasts.apple.com/podcast/YOUR_PODCAST_ID"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-purple-400 transition-colors font-medium text-sm md:text-base"
+          >
+            Listen on Apple Music
+          </a>
         </div>
       </div>
     </header>

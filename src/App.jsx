@@ -7,21 +7,58 @@ import { videosApi } from './api/videos';
 function App() {
   const [recentVideos, setRecentVideos] = useState([]);
   const [mostWatchedVideos, setMostWatchedVideos] = useState([]);
+  const [olderVideos, setOlderVideos] = useState([]);
   const [categorizedVideos, setCategorizedVideos] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [recent, mostWatched, categorized] = await Promise.all([
+        const CACHE_KEY = 'tdm_manthan_videos';
+        const CACHE_TIMESTAMP_KEY = 'tdm_manthan_videos_timestamp';
+        const CACHE_DURATION = 24 * 60 * 60 * 1000;
+
+        const cachedData = localStorage.getItem(CACHE_KEY);
+        const cacheTimestamp = localStorage.getItem(CACHE_TIMESTAMP_KEY);
+
+        if (cachedData && cacheTimestamp) {
+          const now = Date.now();
+          const age = now - parseInt(cacheTimestamp, 10);
+
+          if (age < CACHE_DURATION) {
+            const parsed = JSON.parse(cachedData);
+            setRecentVideos(parsed.recent);
+            setMostWatchedVideos(parsed.mostWatched);
+            setOlderVideos(parsed.older);
+            setCategorizedVideos(parsed.categorized);
+            setLoading(false);
+            return;
+          } else {
+            localStorage.removeItem(CACHE_KEY);
+            localStorage.removeItem(CACHE_TIMESTAMP_KEY);
+          }
+        }
+
+        const [recent, mostWatched, older, categorized] = await Promise.all([
           videosApi.getRecentVideos(5),
           videosApi.getMostWatchedVideos(10),
+          videosApi.getOlderVideos(10),
           videosApi.getVideosByCategories(),
         ]);
 
         setRecentVideos(recent);
         setMostWatchedVideos(mostWatched);
+        setOlderVideos(older);
         setCategorizedVideos(categorized);
+
+        const dataToCache = {
+          recent,
+          mostWatched,
+          older,
+          categorized
+        };
+        localStorage.setItem(CACHE_KEY, JSON.stringify(dataToCache));
+        localStorage.setItem(CACHE_TIMESTAMP_KEY, Date.now().toString());
       } catch (error) {
         console.error('Error fetching videos:', error);
       } finally {
@@ -49,6 +86,8 @@ function App() {
 
         <div className="py-12">
           <VideoSection title="Most Watched" videos={mostWatchedVideos} />
+
+          <VideoSection title="Older but Golden" videos={olderVideos} />
 
           {Object.entries(categorizedVideos).map(([category, videos]) => (
             <VideoSection key={category} title={category} videos={videos} />
