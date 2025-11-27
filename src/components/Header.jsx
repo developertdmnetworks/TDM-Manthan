@@ -1,19 +1,22 @@
-import { Mic2, Menu } from 'lucide-react';
+import { Menu } from 'lucide-react';
+import logo from '../assets/manthan logo png.png'; // 1. Import the logo image
 
 export function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black to-transparent">
+    <header>
       <div className="px-8 md:px-16 py-4 flex items-center justify-between">
         <div className="flex items-center gap-8">
           <button className="text-white md:hidden">
             <Menu size={28} />
           </button>
 
-          <div className="flex items-center gap-3">
-            <Mic2 size={36} className="text-orange-600" />
-            <h1 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
-              TDM Manthan
-            </h1>
+          {/* 2. Replaced existing Mic2 icon and h1 with the new logo image */}
+          <div className="flex items-center"> 
+            <img 
+              src={logo} 
+              alt="Manthan Logo" 
+              className="h-16 md:h-16" // Add appropriate Tailwind CSS classes for size
+            />
           </div>
 
         </div>
