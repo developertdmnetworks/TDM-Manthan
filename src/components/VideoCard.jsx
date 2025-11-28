@@ -42,26 +42,26 @@ export function VideoCard({ video, onClick }) {
           alt={video.title}
           className="w-full aspect-video object-cover transition-opacity duration-300 group-hover:opacity-75"
         />
-        <div className="absolute bottom-2 right-2 bg-black bg-opacity-80 px-2 py-1 rounded text-white text-xs font-medium">
+        <div className="absolute bottom-1.5 sm:bottom-2 right-1.5 sm:right-2 bg-black bg-opacity-80 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded text-white text-[10px] sm:text-xs font-medium">
           {video.duration}
         </div>
       </div>
 
-      <div className="mt-3">
-        <h3 className="text-white font-medium text-sm line-clamp-2 leading-tight group-hover:text-orange-400 transition-colors">
+      <div className="mt-2 sm:mt-3">
+        <h3 className="text-white font-medium text-xs sm:text-sm line-clamp-2 leading-tight group-hover:text-orange-400 transition-colors">
           {video.title}
         </h3>
 
-        <div className="mt-2 flex items-center gap-2 text-gray-400 text-xs">
+        <div className="mt-1.5 sm:mt-2 flex items-center gap-1.5 sm:gap-2 text-gray-400 text-[10px] sm:text-xs">
           <div className="flex items-center gap-1">
-            <Eye size={14} />
+            <Eye size={12} className="sm:w-[14px] sm:h-[14px]" />
             <span>{formatViews(video.views)} views</span>
           </div>
           <span>•</span>
           <span>{formatDate(video.upload_date)}</span>
         </div>
 
-        <p className="mt-1 text-gray-400 text-xs line-clamp-2 leading-relaxed">
+        <p className="mt-1 text-gray-400 text-[10px] sm:text-xs line-clamp-2 leading-relaxed hidden sm:block">
           {video.description}
         </p>
       </div>

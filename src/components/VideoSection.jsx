@@ -26,15 +26,15 @@ export function VideoSection({ title, videos }) {
   }
 
   return (
-    <div className="mb-12 group/section">
-      <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 px-8 md:px-16">
+    <div className="mb-8 md:mb-12 group/section">
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6 px-4 sm:px-6 md:px-8 lg:px-16">
         {title}
       </h2>
 
-      <div className="relative px-8 md:px-16">
+      <div className="relative px-4 sm:px-6 md:px-8 lg:px-16">
         <button
           onClick={() => scroll('left')}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/80 hover:bg-black text-white p-2 rounded-full transition-all duration-300 opacity-0 group-hover/section:opacity-100 ml-2 backdrop-blur-sm"
+          className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/80 hover:bg-black text-white p-2 rounded-full transition-all duration-300 opacity-0 group-hover/section:opacity-100 ml-2 backdrop-blur-sm"
           aria-label="Scroll left"
         >
           <ChevronLeft size={24} />
@@ -42,14 +42,14 @@ export function VideoSection({ title, videos }) {
 
         <div
           ref={scrollContainerRef}
-          className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
+          className="flex gap-3 sm:gap-4 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
           style={{
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
           }}
         >
           {videos.map((video) => (
-            <div key={video.id} className="flex-shrink-0 w-72">
+            <div key={video.id} className="flex-shrink-0 w-64 sm:w-72">
               <VideoCard video={video} />
             </div>
           ))}
@@ -57,7 +57,7 @@ export function VideoSection({ title, videos }) {
 
         <button
           onClick={() => scroll('right')}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/80 hover:bg-black text-white p-2 rounded-full transition-all duration-300 opacity-0 group-hover/section:opacity-100 mr-2 backdrop-blur-sm"
+          className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/80 hover:bg-black text-white p-2 rounded-full transition-all duration-300 opacity-0 group-hover/section:opacity-100 mr-2 backdrop-blur-sm"
           aria-label="Scroll right"
         >
           <ChevronRight size={24} />

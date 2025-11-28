@@ -84,7 +84,7 @@ function App() {
       <main>
         <BannerCarousel videos={recentVideos} />
 
-        <div className="py-12">
+        <div className="py-8 sm:py-10 md:py-12">
           <VideoSection title="Most Watched" videos={mostWatchedVideos} />
 
           <VideoSection title="Older but Golden" videos={olderVideos} />
@@ -95,9 +95,14 @@ function App() {
         </div>
       </main>
 
-      <footer className="bg-black border-t border-gray-800 py-8 px-8 md:px-16">
-        <div className="text-center text-gray-400">
-          <p className="text-sm">© 2025 TDM Manthan. All rights reserved.</p>
+      <footer className="bg-black border-t border-gray-800 py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-8 lg:px-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center text-gray-300 space-y-3 sm:space-y-4">
+            <p className="text-sm sm:text-base md:text-lg leading-relaxed">
+              <span className="font-semibold text-white">TDM Manthan</span> (a unit of TDM Group) – A motivational podcast sharing real stories of India's unsung heroes, hosted by veteran journalist <span className="font-semibold text-white">Vatsala Shrangi</span>. Inspiring journeys of courage, resilience, and impact.
+            </p>
+            <p className="text-xs sm:text-sm text-gray-500 pt-2 sm:pt-4">© 2025 TDM Manthan. All rights reserved.</p>
+          </div>
         </div>
       </footer>
     </div>
