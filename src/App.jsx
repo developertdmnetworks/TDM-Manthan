@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import { BannerCarousel } from './components/BannerCarousel';
 import { VideoSection } from './components/VideoSection';
 import { videosApi } from './api/videos';
+import logo from './assets/manthan logo png.png'; // 1. Import the logo image
 
 function App() {
   const [recentVideos, setRecentVideos] = useState([]);
@@ -98,6 +99,15 @@ function App() {
       <footer className="bg-black border-t border-gray-800 py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-8 lg:px-16">
         <div className="max-w-4xl mx-auto">
           <div className="text-center text-gray-300 space-y-3 sm:space-y-4">
+            
+            {/* 2. Added the logo image to the footer */}
+            <img 
+              src={logo} 
+              alt="TDM Manthan Logo" 
+              className="mx-auto h-12 mb-4" // Centered and sized logo for the footer
+            />
+            {/* -------------------------------------- */}
+            
             <p className="text-sm sm:text-base md:text-lg leading-relaxed">
               <span className="font-semibold text-white">TDM Manthan</span> (a unit of TDM Group) – A motivational podcast sharing real stories of India's unsung heroes, hosted by veteran journalist <span className="font-semibold text-white">Vatsala Shrangi</span>. Inspiring journeys of courage, resilience, and impact.
             </p>

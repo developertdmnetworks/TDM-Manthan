@@ -31,7 +31,7 @@ export function Header() {
 
         <nav className="hidden md:flex items-center gap-6">
           <a
-            href="https://www.instagram.com/tdmmanthan/"
+            href="https://www.instagram.com/tdmanthan/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-white hover:text-pink-500 transition-colors font-medium text-sm lg:text-base"
@@ -40,7 +40,7 @@ export function Header() {
             <span>Instagram</span>
           </a>
           <a
-            href="https://www.youtube.com/@TDMManthan"
+            href="https://www.youtube.com/@TDManthan"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-white hover:text-red-500 transition-colors font-medium text-sm lg:text-base"
