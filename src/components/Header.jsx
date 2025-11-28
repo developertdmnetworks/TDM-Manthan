@@ -91,7 +91,7 @@ export function Header() {
               <span>Watch Us on YouTube</span>
             </a>
             <a
-              href="https://open.spotify.com/show/YOUR_SHOW_ID"
+              href="https://open.spotify.com/show/YOUR_SHOW_ ID"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 text-white hover:text-green-500 transition-colors font-medium py-2"
