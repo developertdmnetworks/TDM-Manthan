@@ -71,7 +71,7 @@ export function Header() {
         <div className="md:hidden bg-black bg-opacity-95 backdrop-blur-sm border-t border-gray-800">
           <nav className="flex flex-col px-4 py-4 space-y-4">
             <a
-              href="https://www.instagram.com/tdmmanthan/"
+              href="https://www.instagram.com/tdmanthan/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 text-white hover:text-pink-500 transition-colors font-medium py-2"
@@ -81,7 +81,7 @@ export function Header() {
               <span>Instagram</span>
             </a>
             <a
-              href="https://www.youtube.com/@TDMManthan"
+              href="https://www.youtube.com/@TDManthan"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 text-white hover:text-red-500 transition-colors font-medium py-2"
